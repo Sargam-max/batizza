@@ -184,7 +184,7 @@ cd ../Backend && NODE_ENV=production node server.js
 
 ---
 
-## 📝 Notes
+## 📝 Notes.
 
 - Food reels are stored on **ImageKit CDN** — make sure your ImageKit credentials are correct
 - Cookies are `httpOnly` — no token exposed to JavaScript
