@@ -1,0 +1,27 @@
+{
+  "name": "foodreel-backend",
+  "version": "1.0.0",
+  "description": "FoodReel - Food Delivery Backend API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build:frontend": "cd ../Frontend && npm install && npm run build",
+    "start:prod": "npm run build:frontend && NODE_ENV=production node server.js"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "imagekit": "^6.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.0",
+    "multer": "^2.0.2",
+    "razorpay": "^2.9.2",
+    "uuid": "^13.0.0"
+  }
+}
