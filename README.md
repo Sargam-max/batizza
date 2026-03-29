@@ -1,43 +1,82 @@
-# FoodReel - Full Stack Application
+# FoodReel - Full Stack Food Delivery App
 
-## Introduction
-FoodReel is a full-stack application that allows users to explore, share, and manage their food recipes in a user-friendly interface. This application leverages modern web technologies to provide a seamless experience.
+## Overview
+FoodReel is a comprehensive food delivery application that connects users with local restaurants. It offers an easy-to-use interface for browsing menus, placing orders, and tracking deliveries.
 
-## Prerequisites
-Before you begin, ensure you have met the following requirements:
-- [Node.js](https://nodejs.org/) installed on your machine.
-- [npm](https://www.npmjs.com/) (comes with Node.js).
+## Features
+- **User Authentication**: Secure login and registration process for users.
+- **Restaurant Listings**: A variety of restaurants with real-time menu updates.
+- **Order Management**: Add items to cart, checkout, and payment processing.
+- **Tracking**: Track orders from preparation to delivery.
+- **Review System**: Rate and review restaurants and dishes.
+- **Admin Dashboard**: For restaurant owners to manage their listings and orders.
 
 ## Setup Instructions
-1. Clone the repository:
+1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Sargam-max/batizza
-   cd FoodReel_FullStack
+   git clone https://github.com/Sargam-max/batizza.git
+   cd batizza
    ```
-2. Install the dependencies:
+2. **Install dependencies**:
    ```bash
    npm install
    ```
+3. **Database Setup**:
+   - Create a `.env` file based on `.env.example`.
+   - Set up the database according to the schema in `db/schema.sql`.
+4. **Run Migrations**:
+   ```bash
+   npm run migrate
+   ```
 
-## Running the Application
-To start the application, run the following command:
-```bash
-npm start
+## Running in Development
+1. Start the server:
+   ```bash
+   npm run dev
+   ```
+2. Open your browser and go to `http://localhost:3000`.
+
+## Running in Production
+1. Build the application:
+   ```bash
+   npm run build
+   ```
+2. Start the production server:
+   ```bash
+   npm start
+   ```
+
+## API Reference
+- **GET /api/restaurants**: List all restaurants
+- **POST /api/orders**: Place a new order
+- **GET /api/orders/:id**: Get order details
+
+## Database Schema
+- **Users**: `id`, `username`, `password`, `email`
+- **Restaurants**: `id`, `name`, `menu`, `location`
+- **Orders**: `id`, `user_id`, `restaurant_id`, `status`
+
+## File Structure
 ```
-You should be able to access the application at `http://localhost:3000`. 
+batizza/
+│
+├── src/
+│   ├── components/
+│   ├── api/
+│   ├── pages/
+│   └── styles/
+├── db/
+│   └── schema.sql
+├── .env.example
+└── README.md
+```
 
-## Usage Instructions
-Once the application is running, you can:
-- Create and manage your recipes.
-- Share recipes with friends.
+## Troubleshooting
+- If you encounter issues during setup, ensure that all dependencies are installed and the database is correctly set up.
+- Check console logs for any runtime errors.
 
-## Contributing
-To contribute to FoodReel, follow these steps:
-1. Fork the project.
-2. Create your feature branch.
-3. Commit your changes.
-4. Push to the branch.
-5. Open a Pull Request.
+## Contribution Guidelines
+- Fork the repository and create a new branch (e.g., `feature-xyz`).
+- Make your changes and submit a pull request.
 
-## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+Feel free to reach out if you have any questions!
